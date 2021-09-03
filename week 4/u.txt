@@ -1,0 +1,17 @@
+n=100;
+
+B=diag(10*ones(1,n))+diag(-5*ones(1,n-1),-1)+diag(5*ones(1,n-1),1)
+A=B'*B;
+R=chol(A);
+%%
+%finding the inverse
+invA=inv(R)*inv(R')
+Ainv_r=inv(A)
+%%
+%resolution of a system
+b=sum(A, 2);
+x1=R\(R'\b)
+x=A\b
+
+
+
